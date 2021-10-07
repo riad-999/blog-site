@@ -32,3 +32,11 @@
 --meta descreption
 --heading (proximity in the UI)
 --icnlude related posts
+
+**pages :
+
+home
+blogs
+login 
+register 
+profile
