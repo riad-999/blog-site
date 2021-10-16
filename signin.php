@@ -6,7 +6,7 @@ include_once './init.php';
 $login_inputs = ['email', 'password'];
 if (isset($_POST['login'])) {
     foreach ($login_inputs as $input) {
-        $Template->set_data($input, $_POST[$input]);
+        $Template->set_data($input, htmlentities($_POST[$input], ENT_QUOTES));
     }
 } else {
     foreach ($login_inputs as $input) {
@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
 $register_inputs = ['username', 'reg-email', 'reg-password'];
 if (isset($_POST['register'])) {
     foreach ($register_inputs as $input) {
-        $Template->set_data($input, $_POST[$input]);
+        $Template->set_data($input, htmlentities($_POST[$input], ENT_QUOTES));
     }
 } else {
     foreach ($register_inputs as $input) {
