@@ -1,3 +1,4 @@
+// toggle sidebar
 const sidebar = document.querySelector(
     '.sidebar'
 );
@@ -11,3 +12,21 @@ toggleBtn.addEventListener(
         .toggle('show');
     }
 )
+
+// alert
+window.addEventListener('load',() => {
+    const alert = document.querySelector(".alert");
+    if(alert){
+        setTimeout(() => {
+            alert.classList.add('no-opacity');
+        },3000);
+    }
+});
+window.addEventListener('load',() => {
+    const alert = document.querySelector(".alert");
+        if(alert){
+        setTimeout(() => {
+            alert.remove();
+        },4000);
+    }
+});

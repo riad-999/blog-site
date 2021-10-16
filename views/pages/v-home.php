@@ -4,6 +4,17 @@
 
 <body>
     <?php include_once './views/elements/v-navbar.php'; ?>
+    <?php
+    if ($alert = $Template->get_alert()) {
+        $type = $alert['type'];
+        $message = $alert['message'];
+    ?>
+    <section class="alert alert--<?= $type ?>">
+        <?= $message ?>
+    </section>
+    <?php
+        unset($_SESSION['alert']);
+    } ?>
     <main class="main-content">
         <section class="main-content-intro">
             <h1 class="focal-1">

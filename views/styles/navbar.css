@@ -32,7 +32,7 @@
 }
 .navbar__item {
   border-bottom: solid transparent 2px;
-  margin: 0 0.8rem;
+  margin-right: 1rem;
 }
 .navbar__item:hover,
 .navbar__item:focus {

@@ -36,6 +36,24 @@
 .signin {
   margin-top: 3rem;
 }
+/* .alert {
+  margin: 0 auto 2rem;
+  width: min(95%, var(--fixed-with));
+  padding: 0.5rem;
+  text-align: center;
+} */
+.alert--success {
+  background-color: var(--green-300);
+  color: var(--green-900);
+}
+.alert--error {
+  background-color: var(--red-300);
+  color: var(--red-700);
+}
+.alert--warning {
+  background-color: var(--amber-400);
+  color: var(--amber-800);
+}
 @media all and (min-width: 1200px) {
   .main-content-intro {
     padding: 220px 0;
