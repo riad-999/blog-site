@@ -60,10 +60,14 @@ if (isset($_POST['login'])) {
         }
         // correct credentials
         // login the user 
-        $isadmin = $user['admin'] === '1' ? TRUE : FALSE;
+        $is_admin = $user['admin'] === 1 ? TRUE : FALSE;
         $_SESSION['is-auth'] = TRUE;
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['email'] = $user['email'];
+        $_SESSION['user'] = [
+            'username' => $user['username'],
+            'email' => $user['email'],
+            'is-admin' => $is_admin
+        ];
+
         $username = $user['username'];
         // redirect to home page 
         $Template->set_alert("welcome $username");

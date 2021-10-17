@@ -207,7 +207,7 @@ button {
   border: none;
 }
 .form__textarea {
-  height: 7rem;
+  height: 600px;
   border: solid var(--cool-gray-700) 1px;
 }
 ::placeholder {
@@ -218,6 +218,9 @@ button {
   color: var(--red-700);
   letter-spacing: var(--letter-spacing);
   text-transform: capitalize;
+}
+.center {
+  text-align: center;
 }
 /* laoding */
 @keyframes spinner {

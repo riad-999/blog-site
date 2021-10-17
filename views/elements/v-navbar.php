@@ -15,20 +15,20 @@
             <?php
             if (
                 isset($_SESSION['is-auth']) &&
-                isset($_SESSION['admin']) &&
-                $_SESSION['admin'] === '1'
+                isset($_SESSION['user']) &&
+                $_SESSION['user']['is-admin']
             ) {
             ?>
             <li class="navbar__item">
-                <a href="./admin">
+                <a href="./admin.php">
                     admin
                 </a>
             </li>
             <?php } ?>
         </ul>
         <button class="btn">
-            <?php if ($Template->get_data('is-auth')) { ?>
-            <a href="./signout.php">sign out</a>
+            <?php if (isset($_SESSION['is-auth']) && $_SESSION['isauth'] === TRUE) { ?>
+            <a href="./signout.php">Logout</a>
             <?php } else { ?>
             <a href="./signin.php">sign in/up</a>
             <?php } ?>
@@ -45,6 +45,19 @@
             <li class="sidebar__item">
                 contacts
             </li>
+            <?php
+            if (
+                isset($_SESSION['is-auth']) &&
+                isset($_SESSION['user']) &&
+                $_SESSION['user']['is-admin']
+            ) {
+            ?>
+            <li class="sidebar__item">
+                <a href="./admin.php">
+                    admin
+                </a>
+            </li>
+            <?php } ?>
         </ul>
         <button class="btn">
             signin

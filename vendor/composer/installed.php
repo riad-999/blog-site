@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8edcacdfa9849110d4e68fde3b31e6d4f6626b75',
+        'reference' => 'c66208d71fffef72a193ea132859fedd6d6ff2a3',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8edcacdfa9849110d4e68fde3b31e6d4f6626b75',
+            'reference' => 'c66208d71fffef72a193ea132859fedd6d6ff2a3',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -26,6 +26,15 @@
             'install_path' => __DIR__ . '/../graham-campbell/result-type',
             'aliases' => array(),
             'reference' => '84afea85c6841deeea872f36249a206e878a5de0',
+            'dev_requirement' => false,
+        ),
+        'michelf/php-markdown' => array(
+            'pretty_version' => '1.9.0',
+            'version' => '1.9.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../michelf/php-markdown',
+            'aliases' => array(),
+            'reference' => 'c83178d49e372ca967d1a8c77ae4e051b3a3c75c',
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(

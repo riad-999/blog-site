@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./views/styles/navbar.css?<?= time() ?>">
     <link rel="stylesheet" href="./views/styles/form.css?<?= time() ?>">
     <link rel="stylesheet" href="./views/styles/blog-card.css?<?= time() ?>">
+    <link rel="stylesheet" href="./views/styles/article.css?<?= time() ?>">
 
     <script defer src="./views/javascript/event.js"></script>
 

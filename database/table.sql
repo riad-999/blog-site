@@ -9,3 +9,13 @@ CREATE TABLE IF NOT EXISTS users (
     UNIQUE email_index (email)
     
 ) ENGINE = INNODB ;
+
+
+CREATE TABLE IF NOT EXISTS blogs (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(127) NOT NULL,
+    image_name VARCHAR(32) NOT NULL,
+    content TEXT NOT NULL,
+    PRIMARY KEY (id),
+    INDEX title_index (title)
+) ENGINE = INNODB;
