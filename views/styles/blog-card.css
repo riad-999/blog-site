@@ -25,6 +25,9 @@
 .blog__img__wrapper {
   border-radius: var(--border-radius);
 }
+.blog__img {
+  height: 300px;
+}
 .main-footer {
   background-color: var(--elements-backgroud-color);
   padding: 2rem 0;

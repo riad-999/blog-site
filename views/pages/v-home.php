@@ -40,108 +40,33 @@
                 <div class="title__underline"></div>
             </header>
             <main class="blogs-wrapper">
+                <?php
+                $articles = $Template->get_data('articles');
+                if (count($articles) == 0) echo "empty array";
+                foreach ($articles as $article) {
+                ?>
                 <article class="blog">
                     <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
+                        <img src="./views/images/uploads/<?= $article['image_name'] ?>" alt="article image"
+                            class="blog__img">
                     </div>
                     <div class="blog__info">
                         <h4 class="blog__title">
-                            title here
+                            <?= $article['title'] ?>
                         </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
+                        <date class="blog__desc">
+                            <?= explode(' ', $article['date'])[0] ?>
+                        </date>
                         <button type="button" class="btn btn--block">
-                            read
+                            <a href="./single-article.php?id=<?= $article['id'] ?>">
+                                read
+                            </a>
                         </button>
                     </div>
                 </article>
-                <article class="blog">
-                    <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
-                    </div>
-                    <div class="blog__info">
-                        <h4 class="blog__title">
-                            title here
-                        </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
-                        <button type="button" class="btn btn--block">
-                            read
-                        </button>
-                    </div>
-                </article>
-                <article class="blog">
-                    <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
-                    </div>
-                    <div class="blog__info">
-                        <h4 class="blog__title">
-                            title here
-                        </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
-                        <button type="button" class="btn btn--block">
-                            read
-                        </button>
-                    </div>
-                </article>
-                <article class="blog">
-                    <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
-                    </div>
-                    <div class="blog__info">
-                        <h4 class="blog__title">
-                            title here
-                        </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
-                        <button type="button" class="btn btn--block">
-                            read
-                        </button>
-                    </div>
-                </article>
-                <article class="blog">
-                    <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
-                    </div>
-                    <div class="blog__info">
-                        <h4 class="blog__title">
-                            title here
-                        </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
-                        <button type="button" class="btn btn--block">
-                            read
-                        </button>
-                    </div>
-                </article>
-                <article class="blog">
-                    <div class="blog__img__wrapper">
-                        <img src="./views/images/ball.jpg" alt="" class="blog__img">
-                    </div>
-                    <div class="blog__info">
-                        <h4 class="blog__title">
-                            title here
-                        </h4>
-                        <p class="blog__desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sunt excepturi eum eligendi
-                            exercitationem aperiam eius aliquam dolores, dolor at.
-                        </p>
-                        <button type="button" class="btn btn--block">
-                            read
-                        </button>
-                    </div>
-                </article>
+                <?php
+                }
+                ?>
             </main>
         </section>
     </main>

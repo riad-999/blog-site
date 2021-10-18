@@ -13,11 +13,7 @@
                 contacts
             </li>
             <?php
-            if (
-                isset($_SESSION['is-auth']) &&
-                isset($_SESSION['user']) &&
-                $_SESSION['user']['is-admin']
-            ) {
+            if ($Template->get_data('is-admin')) {
             ?>
             <li class="navbar__item">
                 <a href="./admin.php">
@@ -27,7 +23,7 @@
             <?php } ?>
         </ul>
         <button class="btn">
-            <?php if (isset($_SESSION['is-auth']) && $_SESSION['isauth'] === TRUE) { ?>
+            <?php if ($Template->get_data('is-auth')) { ?>
             <a href="./signout.php">Logout</a>
             <?php } else { ?>
             <a href="./signin.php">sign in/up</a>
@@ -46,11 +42,7 @@
                 contacts
             </li>
             <?php
-            if (
-                isset($_SESSION['is-auth']) &&
-                isset($_SESSION['user']) &&
-                $_SESSION['user']['is-admin']
-            ) {
+            if ($Template->get_data('is-admin')) {
             ?>
             <li class="sidebar__item">
                 <a href="./admin.php">
@@ -60,7 +52,11 @@
             <?php } ?>
         </ul>
         <button class="btn">
-            signin
+            <?php if ($Template->get_data('is-auth')) { ?>
+            <a href="./signout.php">Logout</a>
+            <?php } else { ?>
+            <a href="./signin.php">sign in/up</a>
+            <?php } ?>
         </button>
     </aside>
 </header>
