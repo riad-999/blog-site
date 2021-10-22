@@ -1,5 +1,6 @@
 <?php
 include_once './init.php';
+auth();
 $Template->set_data('title', 'creat blog');
 if (isset($_POST['preview']) || isset($_POST['create'])) {
     // handle inputs

@@ -41,6 +41,10 @@
   display: inline-flex;
   gap: 0.5rem;
 }
+
+.center {
+  text-align: center;
+}
 @media all and (min-width: 700px) and (max-width: 1199px) {
   .blogs-wrapper {
     grid-template-columns: 1fr 1fr;

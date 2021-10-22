@@ -20,3 +20,18 @@ function validate(string $value, string $type): bool
     }
     throw new Error("couldn't validate no matching type");
 }
+function auth(): void
+{
+    global $Template;
+    $is_auth = isset($_SESSION['is-auth']) && $_SESSION['is-auth'] === TRUE;
+    if ($is_auth) {
+        $Template->set_data('is-auth', TRUE);
+    }
+    if (
+        $is_auth &&
+        isset($_SESSION['user']) &&
+        $_SESSION['user']['is-admin']
+    ) {
+        $Template->set_data('is-admin', TRUE);
+    }
+}

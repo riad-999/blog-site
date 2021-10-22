@@ -25,7 +25,8 @@
                     search
                 </label> -->
                 <div class="form-row">
-                    <input type="search" placeholder="search for blogs" class="search-input" name="search" value="">
+                    <input type="search" placeholder="search for blogs" class="search-input" name="search"
+                        value="<?= $Template->get_data('input-search') ?>">
                 </div>
                 <button type="submit" class="btn btn--search">
                     search
@@ -42,7 +43,6 @@
             <main class="blogs-wrapper">
                 <?php
                 $articles = $Template->get_data('articles');
-                if (count($articles) == 0) echo "empty array";
                 foreach ($articles as $article) {
                 ?>
                 <article class="blog">
@@ -64,6 +64,11 @@
                         </button>
                     </div>
                 </article>
+                <?php
+                }
+                if (count($articles) === 0) {
+                ?>
+                <div class="center">no articles match the search </div>
                 <?php
                 }
                 ?>

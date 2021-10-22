@@ -1,17 +1,16 @@
 <?php
 include_once './init.php';
-$is_auth = isset($_SESSION['is-auth']) && $_SESSION['is-auth'] === TRUE;
-if ($is_auth) {
-    $Template->set_data('is-auth', TRUE);
-}
-if (
-    $is_auth &&
-    isset($_SESSION['user']) &&
-    $_SESSION['user']['is-admin']
-) {
-    $Template->set_data('is-admin', TRUE);
+auth();
+if (isset($_GET['search'])) {
+    $title = trim($_GET['search']);
+    $articles = $Post_articles->get_articles_by_title($title);
+    $Template->set_data('input-search', htmlentities($title, ENT_QUOTES));
+    $Template->set_data('articles', $articles);
+    $Template->load($ROOT_PATH . '/views/pages/v-home.php');
+    exit();
 }
 // geting 6 most recent articles 
 $articles = $Post_articles->get_article();
+$Template->set_data('input-search', '');
 $Template->set_data('articles', $articles);
-include_once './views/pages/v-home.php';
+$Template->load($ROOT_PATH . '/views/pages/v-home.php');

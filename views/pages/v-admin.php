@@ -20,7 +20,7 @@ global $Template;
     } ?>
     <main class="actions__wrapper">
         <article class="action">
-            <a href="admin-edit.php">
+            <a href="admin-update.php">
                 <i class="far fa-edit"></i>
                 <h3>Edit articles</h3>
                 <div class="action_desc">

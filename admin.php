@@ -1,3 +1,4 @@
 <?php
 include_once "./init.php";
-include './views/pages/v-admin.php';
+auth();
+$Template->load('./views/pages/v-admin.php');

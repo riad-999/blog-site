@@ -13,6 +13,7 @@ class Template
     }
     public function load(string $url): void
     {
+        global $Template;
         include_once($url);
     }
     public function redirect(string $url): void

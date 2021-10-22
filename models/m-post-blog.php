@@ -9,6 +9,7 @@ class Post_articles
     }
     public function creat_blog($title, $article, $image): void
     {
+        $title = strtolower($title);
         $query =
             'INSERT INTO articles (title,image_name,article) VALUES (?,?,?)';
         if (!$insert_stmt = $this->Database->prepare($query)) {
@@ -71,6 +72,36 @@ class Post_articles
             } else {
                 return NULL;
             }
+        }
+    }
+    public function get_articles_by_title(string $title): ?array
+    {
+        $title = strtolower($title);
+        $articles = [];
+        $query =
+            'SELECT id,title,image_name,date FROM articles WHERE title LIKE ?;';
+        if (!$select_stmt = $this->Database->prepare($query)) {
+            throw new Error('Error: status 500 unprepared stmt');
+        }
+        $pattern = "$title%";
+        $select_stmt->bind_param('s', $pattern);
+        if (!$select_stmt->execute()) {
+            throw new Error('Error: status 500 unprepared stmt');
+        }
+        $select_stmt->store_result();
+        if ($select_stmt->num_rows > 0) {
+            $select_stmt->bind_result($id, $title, $image, $date);
+            while ($select_stmt->fetch()) {
+                array_push($articles, [
+                    'id' => $id,
+                    'title' => $title,
+                    'image_name' => $image,
+                    'date' => $date
+                ]);
+            }
+            return $articles;
+        } else {
+            return [];
         }
     }
 }
