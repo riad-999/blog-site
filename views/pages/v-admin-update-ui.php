@@ -17,7 +17,7 @@
         unset($_SESSION['alert']);
     } ?>
     <main>
-        <h2 class="center">edit an article</h2>
+        <h2 class="center">creat an article</h2>
         <form method="POST" target="_blank" class="form form--article" enctype="multipart/form-data">
             <div class="form__row">
                 <label for="title" class="form__label">
@@ -36,14 +36,15 @@
                 <label for="article">
                     article
                 </label>
-                <textarea class="form__textarea" name="markdown" placeholder="article content"
-                    value="<?= $Template->get_data('form-markdown') ?>"></textarea>
+                <textarea class="form__textarea" name="markdown"
+                    placeholder="article content"><?= $Template->get_data('form-markdown') ?></textarea>
             </div>
-            <button class="btn" type="submit" name="create">update</button>
+            <button class="btn" type="submit" name="update">update</button>
             <button class="btn" type="submit" name="preview">preview</button>
+            <button class="btn" name="delete" id="delete">delete</button>
         </form>
     </main>
-    <? include_once './views/elements/v-footer.php'; ?>
+    <?php include_once './views/elements/v-footer.php'; ?>
 </body>
 
 </html>

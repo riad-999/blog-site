@@ -10,7 +10,7 @@ require './vendor/autoload.php';
 $dotenv = Dotenv::createImmutable('./');
 $dotenv->load();
 
-$ROOT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/blog';
+$ROOT_PATH =  $_SERVER['DOCUMENT_ROOT'] . '/blog';
 // database
 const HOST_NAME = 'localhost';
 const DB_USER = 'root';
@@ -22,4 +22,4 @@ $SENDER = getenv('SNEDER');
 $SENDER_PASS = getenv('SENDER_PASS');
 //others
 const SITE_NAME = 'blog';
-const SITE_PATH = 'http://localhost:81/blog/';
+const SITE_PATH = 'http://localhost:81/blog';

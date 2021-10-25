@@ -36,8 +36,9 @@
                 <label for="article">
                     article
                 </label>
-                <textarea class="form__textarea" name="markdown" placeholder="article content"
-                    value="<?= $Template->get_data('form-markdown') ?>"></textarea>
+                <textarea class="form__textarea" name="markdown" placeholder="article content">
+                    <?= $Template->get_data('form-markdown') ?>
+                </textarea>
             </div>
             <button class="btn" type="submit" name="create">creat</button>
             <button class="btn" type="submit" name="preview">preview</button>

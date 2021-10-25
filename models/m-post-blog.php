@@ -7,7 +7,7 @@ class Post_articles
     {
         $this->Database = $db;
     }
-    public function creat_blog($title, $article, $image): void
+    public function create_article($title, $article, $image): void
     {
         $title = strtolower($title);
         $query =
@@ -103,5 +103,27 @@ class Post_articles
         } else {
             return [];
         }
+    }
+    public function update_article(int $id, string $title, string $markdown, string $image): void
+    {
+        if (!$image) {
+            $query =
+                'UPDATE articles SET title = ?,article = ? WHERE id = ?;';
+            if (!$update_stmt = $this->Database->prepare($query)) {
+                throw new Error('Error: status 500 unprepared stmt');
+            }
+            $update_stmt->bind_param('ssi', $title, $markdown, $id);
+        } else {
+            $query =
+                'UPDATE articles SET title = ?,article = ?, image_name = ? WHERE id = ?;';
+            if (!$update_stmt = $this->Database->prepare($query)) {
+                throw new Error('Error: status 500 unprepared stmt');
+            }
+            $update_stmt->bind_param('sssi', $title, $markdown, $image, $id);
+        }
+        if (!$update_stmt->execute()) {
+            throw new Error('Error: status 500 unprepared stmt');
+        }
+        $update_stmt->close();
     }
 }
