@@ -15,6 +15,21 @@
     <?php
         unset($_SESSION['alert']);
     } ?>
+    <section class="confirm__wrapper hidden">
+        <main class="confirm">
+            <div>
+                are you sure you want to delete this post?
+            </div>
+            <div class="mt-1">
+                <button class="btn" id="yes-btn">
+                    yes
+                </button>
+                <button class="btn" id="cancel-btn">
+                    cancel
+                </button>
+            </div>
+        </main>
+    </section>
     <main class="main-content">
         <form class="search-form margin-top margin-bottom">
             <div class="form-row">
@@ -42,10 +57,13 @@
                     <date class="blog__desc">
                         <?= explode(' ', $article['date'])[0] ?>
                     </date>
-                    <button type="button" class="btn btn--block">
+                    <button type="button" class="btn btn--block mt-1">
                         <a href="./single-article-update.php?id=<?= $article['id'] ?>">
-                            update
+                            Update
                         </a>
+                    </button>
+                    <button type="button" class="btn btn--block mt-1 delete" data-id="<?= $article['id'] ?>">
+                        Delete
                     </button>
                 </div>
             </article>

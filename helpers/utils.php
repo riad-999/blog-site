@@ -22,6 +22,7 @@ function validate(string $value, string $type): bool
 }
 function auth(): void
 {
+    // for the view 
     global $Template;
     $is_auth = isset($_SESSION['is-auth']) && $_SESSION['is-auth'] === TRUE;
     if ($is_auth) {

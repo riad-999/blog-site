@@ -20,13 +20,24 @@ window.addEventListener('load',() => {
         setTimeout(() => {
             alert.classList.add('no-opacity');
         },3000);
-    }
-});
-window.addEventListener('load',() => {
-    const alert = document.querySelector(".alert");
-        if(alert){
         setTimeout(() => {
             alert.remove();
         },4000);
     }
 });
+// confirm
+const cancelBtn = document.getElementById('cancel-btn');
+const confirm = document.querySelector('.confirm__wrapper');
+// check if i am the page have confirmation card 
+// to do so i just need to check if there is one of confirmation buttons 
+if(cancelBtn) {
+    // add an event to delete btns of each card
+    // i using event delegation
+    const articlesWrapper = document.querySelector('.blogs-wrapper');
+    articlesWrapper.addEventListener('click',(event) => {
+        if(event.target.classList.contains('delete')){
+            confirm.classList.remove('hidden');
+        }
+    });
+}
+cancelBtn.addEventListener('click',() => confirm.classList.add('hidden'));

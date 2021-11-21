@@ -222,6 +222,30 @@ button {
 .center {
   text-align: center;
 }
+.mt-1 {
+  margin-top: 1rem;
+}
+.confirm__wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(34, 36, 41, 0.2);
+  z-index: 9999;
+}
+.confirm {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, var(--max-with));
+  padding: 3rem 1rem;
+  background-color: var(--elements-backgroud-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-2);
+}
+.hidden {
+  display: none;
+}
 /* laoding */
 @keyframes spinner {
   to {
