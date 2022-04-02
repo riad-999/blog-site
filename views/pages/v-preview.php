@@ -20,8 +20,15 @@ global $Template;
     } ?>
     <main>
         <section class="article">
+            <div class="mb-5">
+                <button class="btn">
+                    <a href="<?= SITE_PATH . '/' . $Template->get_data('back') . '?go-back' ?>">
+                        Go Back
+                    </a>
+                </button>
+            </div>
             <h2>
-                <?= $Template->get_data('blog-title') ?>
+                <?= $Template->get_data('article-title') ?>
             </h2>
             <?= $Template->get_data('html') ?>
         </section>

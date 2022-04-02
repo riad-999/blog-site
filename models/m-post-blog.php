@@ -126,4 +126,17 @@ class Post_articles
         }
         $update_stmt->close();
     }
+    public function delete_article(int $id): void
+    {
+        $query =
+            'DELETE FROM articles WHERE id=?;';
+        if (!$delete_stmt = $this->Database->prepare($query)) {
+            throw new Error('Error: status 500 uprepared stmt');
+        }
+        $delete_stmt->bind_param('i', $id);
+        if (!$delete_stmt->execute()) {
+            throw new Error('Error: status 500 unprepared stmt');
+        }
+        $delete_stmt->close();
+    }
 }

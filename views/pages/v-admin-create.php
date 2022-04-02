@@ -18,13 +18,12 @@
     } ?>
     <main>
         <h2 class="center">creat an article</h2>
-        <form method="POST" target="_blank" class="form form--article" enctype="multipart/form-data">
+        <form method="POST" class="form form--article" enctype="multipart/form-data">
             <div class="form__row">
                 <label for="title" class="form__label">
                     blog title
                 </label>
-                <input type="text" class="form__input" name="title" id="title" placeholder="article title"
-                    value="<?= $Template->get_data('form-title') ?>">
+                <input type="text" class="form__input" name="title" id="title" placeholder="article title">
             </div>
             <div class="form__row">
                 <label for="title" class="form__label">
@@ -36,12 +35,9 @@
                 <label for="article">
                     article
                 </label>
-                <textarea class="form__textarea" name="markdown" placeholder="article content">
-                    <?= $Template->get_data('form-markdown') ?>
-                </textarea>
+                <textarea class="form__textarea" name="markdown" placeholder="article content"></textarea>
             </div>
-            <button class="btn" type="submit" name="create">creat</button>
-            <button class="btn" type="submit" name="preview">preview</button>
+            <button class="btn" type="submit" name="create">create</button>
         </form>
     </main>
     <? include_once './views/elements/v-footer.php'; ?>

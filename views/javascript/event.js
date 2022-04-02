@@ -36,7 +36,13 @@ if(cancelBtn) {
     const articlesWrapper = document.querySelector('.blogs-wrapper');
     articlesWrapper.addEventListener('click',(event) => {
         if(event.target.classList.contains('delete')){
+            const id = event.target.dataset.id;
             confirm.classList.remove('hidden');
+            const yesBtn = document.getElementById('yes-btn');
+            const href = yesBtn.getAttribute('href');
+            console.log(href);
+            console.log(id);
+            yesBtn.setAttribute('href',href + id);
         }
     });
 }

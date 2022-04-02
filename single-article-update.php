@@ -7,7 +7,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $article = $Post_articles->get_article($id);
     } catch (Throwable $error) {
         $_SESSION['error-message'] = $error->getMessage();
-        $Template->redirect($ROOT_PATH . '/error.php');
+        $Template->redirect(SITE_PATH . '/error.php');
     }
     if (!$article) {
         $_SESSION['error-message'] = 'article not found';

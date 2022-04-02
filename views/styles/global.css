@@ -246,6 +246,9 @@ button {
 .hidden {
   display: none;
 }
+.mb-5 {
+  margin-bottom: 5rem;
+}
 /* laoding */
 @keyframes spinner {
   to {

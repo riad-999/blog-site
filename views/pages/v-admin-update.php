@@ -21,8 +21,10 @@
                 are you sure you want to delete this post?
             </div>
             <div class="mt-1">
-                <button class="btn" id="yes-btn">
-                    yes
+                <button class="btn">
+                    <a href="<?= SITE_PATH . '/single-article-delete.php?id=' ?>" id="yes-btn">
+                        yes
+                    </a>
                 </button>
                 <button class="btn" id="cancel-btn">
                     cancel

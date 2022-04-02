@@ -22,4 +22,4 @@ $SENDER = getenv('SNEDER');
 $SENDER_PASS = getenv('SENDER_PASS');
 //others
 const SITE_NAME = 'blog';
-const SITE_PATH = 'http://localhost:81/blog';
+const SITE_PATH = 'http://localhost:8080/blog';

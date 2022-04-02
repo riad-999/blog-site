@@ -17,13 +17,13 @@
         unset($_SESSION['alert']);
     } ?>
     <main>
-        <h2 class="center">creat an article</h2>
-        <form method="POST" target="_blank" class="form form--article" enctype="multipart/form-data">
+        <h2 class="center">update an article</h2>
+        <form method="POST" class="form form--article" enctype="multipart/form-data">
             <div class="form__row">
                 <label for="title" class="form__label">
                     blog title
                 </label>
-                <input type="text" class="form__input" name="title" id="title" placeholder="article title"
+                <input type="text" class="form__input" name="title" id="title" placeholder="ar"
                     value="<?= $Template->get_data('form-title') ?>">
             </div>
             <div class="form__row">
@@ -40,8 +40,6 @@
                     placeholder="article content"><?= $Template->get_data('form-markdown') ?></textarea>
             </div>
             <button class="btn" type="submit" name="update">update</button>
-            <button class="btn" type="submit" name="preview">preview</button>
-            <button class="btn" name="delete" id="delete">delete</button>
         </form>
     </main>
     <?php include_once './views/elements/v-footer.php'; ?>

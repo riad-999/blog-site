@@ -1,14 +1,16 @@
 <?php
 include_once './init.php';
 auth();
+// if (isset($_GET['go-back'])) $_SESSION['preview'] = true;
 $Template->set_data('title', 'creat blog');
 $Template->set_data('form-title', '');
 $Template->set_data('form-markdown', '');
-if (isset($_POST['preview']) || isset($_POST['create'])) {
+// if (isset($_POST['preview']) || isset($_POST['create'])) {
+if (isset($_POST['create'])) {
     // handle inputs
-    $blog_title = htmlentities($_POST['title'], ENT_QUOTES);
+    $article_title = htmlentities($_POST['title'], ENT_QUOTES);
     $markdown = htmlentities($_POST['markdown'], ENT_QUOTES);
-    $Template->set_data('form-title', $blog_title);
+    $Template->set_data('form-title', $article_title);
     $Template->set_data('form-markdown', $markdown);
     // handle the image
     if (is_uploaded_file($_FILES['image']['tmp_name'])) {
@@ -34,21 +36,7 @@ if (isset($_POST['preview']) || isset($_POST['create'])) {
         }
         $image_name = uniqid('', true) . '.' . $file_extention;
         $image_destination = $ROOT_PATH . '/views/images/uploads/' . $image_name;
-    }
-    if (isset($_POST['preview'])) {
-        // display the output
-        $title = $_POST['title'];
-        $markdown = $_POST['markdown'];
-        $html = markdown($markdown);
-        $Template->set_data('blog-title', $title);
-        $Template->set_data('html', $html);
-        $Template->set_data('title', 'preview');
-        $Template->load($ROOT_PATH . '/views/pages/v-preview.php');
-        exit();
-    }
-    if (isset($_POST['create'])) {
-        // insert in the database
-        // save the image
+
         if (is_uploaded_file($_FILES['image']['tmp_name'])) {
             move_uploaded_file($file['tmp_name'], $image_destination);
         } else {
@@ -68,6 +56,22 @@ if (isset($_POST['preview']) || isset($_POST['create'])) {
         $Template->set_alert('article created');
         $Template->redirect(SITE_PATH . '/index.php');
     }
+    // if (isset($_POST['preview'])) {
+    //     // display the output
+    //     $html = markdown($markdown);
+    //     $_SESSION['preview'] = false;
+    //     $_SESSION['p-title'] = $article_title;
+    //     $_SESSION['p-markdown'] = $markdown;
+    //     $Template->set_data('blog-title', $article_title);
+    //     $Template->set_data('html', $html);
+    //     $Template->set_data('title', 'preview');
+    //     $Template->set_data('back', 'admin-create.php');
+    //     $Template->load($ROOT_PATH . '/views/pages/v-preview.php');
+    //     exit();
+    // }
     exit();
 }
 $Template->load($ROOT_PATH . '/views/pages/v-admin-create.php');
+// unset($_SESSION['preview']);
+// unset($_SESSION['p-title']);
+// unset($_SESSION['p-markdown']);
