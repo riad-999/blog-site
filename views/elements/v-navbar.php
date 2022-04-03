@@ -9,9 +9,9 @@
             <li class="navbar__item">
                 <a href="./">home</a>
             </li>
-            <li class="navbar__item">
+            <!-- <li class="navbar__item">
                 contacts
-            </li>
+            </li> -->
             <?php
             if ($Template->get_data('is-admin')) {
             ?>

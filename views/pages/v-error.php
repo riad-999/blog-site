@@ -20,10 +20,9 @@ global $Template;
     } ?>
     <main>
         <section class="error">
-            <h2 class="center">Error</h2>
-            <p class="center">
-                <?= $_SESSION['error-message'] ?>
-            </p>
+            <h3 class="center">
+                Error: <?= isset($_SESSION['error-message']) ? $_SESSION['error-message'] : null ?>
+            </h3>
         </section>
     </main>
 </body>

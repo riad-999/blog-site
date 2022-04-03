@@ -1,6 +1,6 @@
 <?php
 include_once './init.php';
-auth();
+auth(2);
 // if (isset($_GET['go-back'])) $_SESSION['preview'] = true;
 $Template->set_data('form-title', trim($_SESSION['article']['title']));
 $Template->set_data('form-markdown', trim($_SESSION['article']['content']));

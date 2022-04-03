@@ -63,6 +63,7 @@ if (isset($_POST['login'])) {
         $is_admin = $user['admin'] === 1 ? TRUE : FALSE;
         $_SESSION['is-auth'] = TRUE;
         $_SESSION['user'] = [
+            'id' => $user['id'],
             'username' => $user['username'],
             'email' => $user['email'],
             'is-admin' => $is_admin

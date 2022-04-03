@@ -61,6 +61,24 @@
   background-color: var(--amber-400);
   color: var(--amber-800);
 }
+.comment-form {
+  background-color: var(--cool-gray-100);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin-bottom: 3rem;
+}
+.comment-form textarea {
+  width: min(100%,600px);
+  height: 200px;
+}
+.comment h5 {
+  margin-bottom: 1rem;
+}
+.comment {
+  margin-bottom: 1rem;
+  border-bottom: solid var(--cool-gray-200) 2px;
+}
 @media all and (min-width: 1200px) {
   .main-content-intro {
     padding: 220px 0;

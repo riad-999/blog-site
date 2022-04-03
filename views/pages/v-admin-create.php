@@ -17,7 +17,7 @@
         unset($_SESSION['alert']);
     } ?>
     <main>
-        <h2 class="center">creat an article</h2>
+        <h2 class="center">create an article</h2>
         <form method="POST" class="form form--article" enctype="multipart/form-data">
             <div class="form__row">
                 <label for="title" class="form__label">
@@ -35,6 +35,7 @@
                 <label for="article">
                     article
                 </label>
+                <div>type as .md format and it will automaticly be converted to HTML</div>
                 <textarea class="form__textarea" name="markdown" placeholder="article content"></textarea>
             </div>
             <button class="btn" type="submit" name="create">create</button>

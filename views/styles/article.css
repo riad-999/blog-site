@@ -33,6 +33,11 @@
 .margin-top {
   margin-top: 3rem;
 }
+.article__content {
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: solid var(--elements-backgroud-color) 2px;
+}
 .margin-bottom {
   margin-bottom: 3rem;
 }
