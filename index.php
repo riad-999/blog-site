@@ -1,6 +1,6 @@
 <?php
 include_once './init.php';
-auth();
+auth(0);
 if (isset($_GET['search'])) {
     $title = trim($_GET['search']);
     $articles = $Post_articles->get_articles_by_title($title);

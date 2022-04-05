@@ -4,7 +4,7 @@ function validate(string $value, string $type): bool
     if ($type === 'username') {
         if (empty(trim($value)))
             return FALSE;
-        if (strlen($value) < 6)
+        if (strlen($value) < 3)
             return FALSE;
         return TRUE;
     }

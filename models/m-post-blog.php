@@ -83,7 +83,7 @@ class Post_articles
         if (!$select_stmt = $this->Database->prepare($query)) {
             throw new Error('Error: status 500 unprepared stmt');
         }
-        $pattern = "$title%";
+        $pattern = "%$title%";
         $select_stmt->bind_param('s', $pattern);
         if (!$select_stmt->execute()) {
             throw new Error('Error: status 500 unprepared stmt');

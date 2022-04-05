@@ -18,6 +18,11 @@
         } ?>
         <h3 class="center">login</h3>
         <form action="" method="POST" class="form from--login">
+            <small>login as admin : (admin@gmail.com admin147)</small>
+            <br />
+            <small>login as normal: (normal@gmail.com normal147)</small>
+            <br />
+            <small>or you can register</small>
             <div class="form__row">
                 <label class="form__label" for="email">
                     email

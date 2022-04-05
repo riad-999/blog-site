@@ -29,8 +29,6 @@ class Post_users
             $username,
             $email,
             $password,
-            $activation_hash,
-            $pass_hash,
             $active,
             $notify,
             $admin
@@ -42,8 +40,6 @@ class Post_users
             'username' => $username,
             'email' => $email,
             'password' => $password,
-            'activation_hash' => $activation_hash,
-            'pass-hash' => $pass_hash,
             'active' => $active,
             'notify' => $notify,
             'admin' => $admin
@@ -64,17 +60,16 @@ class Post_users
         $notify = $notify ? 1 : 0;
         $query =
             "INSERT INTO users 
-        (username,email,user_pass,activation_hash,notify) 
-        VALUES (?,?,?,?,?) ;";
+        (username,email,user_pass,notify) 
+        VALUES (?,?,?,?) ;";
         if (!$insert_stmt = $this->database->prepare($query)) {
             throw new Error("Error: status 500");
         }
         $insert_stmt->bind_param(
-            "ssssi",
+            "sssi",
             $username,
             $email,
             $hashed_password,
-            $activation_hash,
             $notify
         );
         if (!$insert_stmt->execute()) {

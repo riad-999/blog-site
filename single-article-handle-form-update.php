@@ -62,11 +62,8 @@ if (isset($_POST['update'])) {
     $Template->set_alert('article updated');
     unset($_SESSION['article']);
 
-    $Template->redirect(SITE_PATH . '/index.php');
+    $Template->redirect(SITE_PATH . '/admin-update.php');
     exit();
 }
 
 $Template->load($ROOT_PATH . '/views/pages/v-admin-update-ui.php');
-// unset($_SESSION['preview']);
-// unset($_SESSION['p-title']);
-// unset($_SESSION['p-markdown']);

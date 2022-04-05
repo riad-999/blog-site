@@ -1,6 +1,6 @@
 <?php
 include_once './init.php';
-
+auth(0);
 // setting up input data from last submit.
 // if no submit then empty as default
 $login_inputs = ['email', 'password'];
@@ -108,7 +108,7 @@ if (isset($_POST['register'])) {
         if (!$Post_users->register($username, $email, $password, $notify)) {
             $Template->set_alert("this email : $email is aleready in use", 'error');
         } else {
-            $Template->set_alert('you need to confirm your account. go check your email for confirmation', 'warning');
+            $Template->set_alert('account registered', 'success');
         }
         include_once './views/pages/v-signin.php';
     }

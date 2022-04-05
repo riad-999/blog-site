@@ -22,6 +22,16 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-2);
 }
+/* .blog__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+.blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .fa-edit,
 .fa-plus-square {
   font-size: 1.8rem;
