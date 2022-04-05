@@ -36,7 +36,7 @@
         <section class="blogs">
             <header>
                 <h3>
-                    blogs
+                    articles
                 </h3>
                 <div class="title__underline"></div>
             </header>

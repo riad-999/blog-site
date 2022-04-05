@@ -5,7 +5,7 @@
 <body>
     <?php include_once './views/elements/v-navbar.php'; ?>
     <?php
-    global $Template;
+    // global $Template;
     if ($alert = $Template->get_alert()) {
         $type = $alert['type'];
         $message = $alert['message'];
@@ -30,7 +30,11 @@
                 <label for="title" class="form__label">
                     blog image
                 </label>
-                <input type="file" class="form__input" name="image" id="title">
+                <div class='upload'>
+                    <input type="file" accept="images/*" class="form__input" name="image" id="upload-image">
+                    <img id="image" src="<?= './views/images/uploads/' . $Template->get_data('form-image') ?>"
+                        alt="select an image">
+                </div>
             </div>
             <div class="form__row">
                 <label for="article">

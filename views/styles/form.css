@@ -79,6 +79,14 @@
   margin-bottom: 1rem;
   border-bottom: solid var(--cool-gray-200) 2px;
 }
+.upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.upload input {
+  align-self: flex-start;
+}
 @media all and (min-width: 1200px) {
   .main-content-intro {
     padding: 220px 0;

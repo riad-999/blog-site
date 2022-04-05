@@ -4,6 +4,7 @@ auth(2);
 // if (isset($_GET['go-back'])) $_SESSION['preview'] = true;
 $Template->set_data('form-title', trim($_SESSION['article']['title']));
 $Template->set_data('form-markdown', trim($_SESSION['article']['content']));
+$Template->set_data('form-image', $_SESSION['article']['image-name']);
 
 // if (isset($_POST['preview']) || isset($_POST['update'])) {
 if (isset($_POST['update'])) {
@@ -12,6 +13,7 @@ if (isset($_POST['update'])) {
     $markdown = htmlentities($_POST['markdown'], ENT_QUOTES);
     $Template->set_data('form-title', $article_title);
     $Template->set_data('form-markdown', $markdown);
+    $Template->set_data('form-image', '');
     // handle the image
     $image_name = '';
     if (is_uploaded_file($_FILES['image']['tmp_name'])) {

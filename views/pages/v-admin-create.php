@@ -26,10 +26,13 @@
                 <input type="text" class="form__input" name="title" id="title" placeholder="article title">
             </div>
             <div class="form__row">
-                <label for="title" class="form__label">
+                <label for="upload-image" class="form__label">
                     blog image
                 </label>
-                <input type="file" class="form__input" name="image" id="title">
+                <div class='upload'>
+                    <input type="file" accept="images/*" class="form__input" name="image" id="upload-image">
+                    <img id="image" src="#" alt="select an image">
+                </div>
             </div>
             <div class="form__row">
                 <label for="article">

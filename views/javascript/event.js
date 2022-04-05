@@ -45,5 +45,18 @@ if(cancelBtn) {
             yesBtn.setAttribute('href',href + id);
         }
     });
+
+    cancelBtn.addEventListener('click',() => confirm.classList.add('hidden'));
 }
-cancelBtn.addEventListener('click',() => confirm.classList.add('hidden'));
+
+const image = document.querySelector("#image");
+const uploadImage = document.querySelector("#upload-image");
+
+if(uploadImage) {
+    uploadImage.addEventListener('change',() => {
+        const [file] = uploadImage.files;
+        if(file) {
+            image.src = URL.createObjectURL(file);
+        }
+    });
+}
