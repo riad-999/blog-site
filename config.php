@@ -21,5 +21,5 @@ const USERS_TABLE = 'users';
 $SENDER = getenv('SNEDER');
 $SENDER_PASS = getenv('SENDER_PASS');
 //others
-const SITE_NAME = 'blog';
+const SITE_NAME = 'readdaily';
 const SITE_PATH = 'http://localhost:8080/blog';

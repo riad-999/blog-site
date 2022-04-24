@@ -106,7 +106,7 @@ if (isset($_POST['register'])) {
     } else {
         // insert in the data base
         if (!$Post_users->register($username, $email, $password, $notify)) {
-            $Template->set_alert("this email : $email is aleready in use", 'error');
+            // $Template->set_alert("this email : $email is aleready in use", 'error');
         } else {
             $Template->set_alert('account registered', 'success');
         }

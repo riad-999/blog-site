@@ -77,18 +77,18 @@ class Post_users
         }
         $insert_stmt->close();
         // mail the user for the account acivation
-        $path = SITE_PATH . "confirm-email.php?email=$email&hash=$activation_hash";
-        $body = [
-            'text-body' => "hey thanks for sining in . one more step 
-            to complete the process, just click on the confiramtion link
-            here : $path",
-            'html-body' => "<div>
-                hey thanks for sining in . one more step 
-            to complete the process, just click on the confiramtion link
-            here : <a href='$path'>click here</a>
-            </div>"
-        ];
-        $Mail->mail([$email], $body, 'email confirmation');
+        // $path = SITE_PATH . "confirm-email.php?email=$email&hash=$activation_hash";
+        // $body = [
+        //     'text-body' => "hey thanks for sining in . one more step 
+        //     to complete the process, just click on the confiramtion link
+        //     here : $path",
+        //     'html-body' => "<div>
+        //         hey thanks for sining in . one more step 
+        //     to complete the process, just click on the confiramtion link
+        //     here : <a href='$path'>click here</a>
+        //     </div>"
+        // ];
+        // $Mail->mail([$email], $body, 'email confirmation');
         return TRUE;
     }
     public function confirm_account(string $email, string $hash): bool

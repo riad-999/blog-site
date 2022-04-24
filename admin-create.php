@@ -12,6 +12,7 @@ if (isset($_POST['create'])) {
     $markdown = htmlentities($_POST['markdown'], ENT_QUOTES);
     $Template->set_data('form-title', $article_title);
     $Template->set_data('form-markdown', $markdown);
+    $image_name = null;
     // handle the image
     if (is_uploaded_file($_FILES['image']['tmp_name'])) {
         $allowed_extentions = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
@@ -36,39 +37,24 @@ if (isset($_POST['create'])) {
         }
         $image_name = uniqid('', true) . '.' . $file_extention;
         $image_destination = $ROOT_PATH . '/views/images/uploads/' . $image_name;
-
-        if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-            move_uploaded_file($file['tmp_name'], $image_destination);
-        } else {
-            $image_name = 'default.jpg';
-        }
-        try {
-            $Post_articles->create_article(
-                $_POST['title'],
-                $_POST['markdown'],
-                $image_name
-            );
-        } catch (Throwable $error) {
-            // redirect to error page 
-            $_SESSION['error-message'] = $error->getMessage();
-            $Template->redirect(SITE_PATH . '/error.php');
-        }
-        $Template->set_alert('article created');
-        $Template->redirect(SITE_PATH . '/index.php');
+        move_uploaded_file($file['tmp_name'], $image_destination);
+    } else {
+        $image_name = 'default.jpg';
     }
-    // if (isset($_POST['preview'])) {
-    //     // display the output
-    //     $html = markdown($markdown);
-    //     $_SESSION['preview'] = false;
-    //     $_SESSION['p-title'] = $article_title;
-    //     $_SESSION['p-markdown'] = $markdown;
-    //     $Template->set_data('blog-title', $article_title);
-    //     $Template->set_data('html', $html);
-    //     $Template->set_data('title', 'preview');
-    //     $Template->set_data('back', 'admin-create.php');
-    //     $Template->load($ROOT_PATH . '/views/pages/v-preview.php');
-    //     exit();
-    // }
+    try {
+        $Post_articles->create_article(
+            $_POST['title'],
+            $_POST['markdown'],
+            $image_name
+        );
+    } catch (Throwable $error) {
+        // redirect to error page 
+        $_SESSION['error-message'] = $error->getMessage();
+        $Template->redirect(SITE_PATH . '/error.php');
+    }
+    $Template->set_alert('article created');
+    $Template->redirect(SITE_PATH . '/index.php');
+
     exit();
 }
 $Template->load($ROOT_PATH . '/views/pages/v-admin-create.php');
